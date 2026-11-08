@@ -1,0 +1,21 @@
+# Add inside the main target block of ios/Podfile (a fresh `npx react-native
+# init` project already generates the rest of the standard Podfile).
+
+target 'AgriSenseMobile' do
+  # ... existing React Native pods (use_react_native!, etc.) ...
+
+  # ExecuTorch iOS runtime. Check https://github.com/pytorch/executorch for
+  # the current recommended integration method — as of 0.4.x this is
+  # distributed as a prebuilt XCFramework via CocoaPods.
+  pod 'ExecuTorch', '~> 0.4.0'
+end
+
+# After editing, run:
+#   cd ios && pod install
+#
+# .pte model files must be added to the Xcode project directly:
+#   1. Drag cnn_classifier_fp32.pte, cnn_classifier_int8.pte,
+#      unet_segmentation_fp32.pte, unet_segmentation_int8.pte into the
+#      AgriSenseMobile group in Xcode.
+#   2. Check "Copy items if needed" and ensure they're added to the
+#      AgriSenseMobile target's "Copy Bundle Resources" build phase.

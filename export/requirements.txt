@@ -1,0 +1,6 @@
+# Keep the exporter aligned with the ExecuTorch 0.4-era APIs used in export_pte.py.
+# Use Python 3.10 in WSL2 Ubuntu for this legacy pinned toolchain.
+torch==2.4.0
+torchvision==0.19.0
+executorch==0.4.0
+numpy>=1.24,<2.0

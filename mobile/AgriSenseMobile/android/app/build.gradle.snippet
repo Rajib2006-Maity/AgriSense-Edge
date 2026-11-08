@@ -1,0 +1,23 @@
+// Add/merge into android/app/build.gradle (this is a snippet, not the full file
+// — a fresh `npx react-native init` project already has the rest of the
+// standard RN Android build.gradle; only the dependency block below is new).
+
+dependencies {
+    // ... existing React Native dependencies ...
+
+    // ExecuTorch Android runtime (Java/Kotlin bindings over the C++ core).
+    // Published to Maven Central starting with ExecuTorch 0.4.
+    // Check https://github.com/pytorch/executorch/releases for the latest
+    // published artifact version before building.
+    implementation("org.pytorch:executorch-android:0.4.0")
+}
+
+android {
+    // Models are loaded from assets/models/*.pte at runtime (see
+    // ExecuTorchModule.assetToFile). Make sure .pte isn't stripped by the
+    // packaging step — it's a binary blob, not a resource RN's bundler knows
+    // about, so it must live under android/app/src/main/assets/models/.
+    aaptOptions {
+        noCompress "pte"
+    }
+}
