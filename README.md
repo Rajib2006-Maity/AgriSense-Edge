@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AgriSense Edge — Android camera app + ExecuTorch model export
 
 AgriSense Edge is the on-device deployment part of the AgriSense plant-disease project. It contains a React Native camera app, Android/iOS ExecuTorch bridge source, and Python scripts that export the CNN classifier and U-Net segmentation models to `.pte` files.
@@ -209,3 +210,7 @@ I could not execute the Android Gradle build or a device camera test in this env
 - ExecuTorch 0.4 setup guide (including Windows/WSL guidance): https://docs.pytorch.org/executorch/0.4/getting-started-setup.html
 - ExecuTorch Android integration: https://docs.pytorch.org/executorch/stable/using-executorch-android.html
 - React Native 0.75 release notes: https://reactnative.dev/blog/2024/08/12/release-0.75
+=======
+# AgriSense-Edge
+AI-powered plant disease detection using CNN and U-Net
+>>>>>>> 67fbbafee3bd394b70f4501d961c281359a39a23
